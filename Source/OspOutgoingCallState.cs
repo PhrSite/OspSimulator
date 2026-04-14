@@ -1,0 +1,16 @@
+﻿/////////////////////////////////////////////////////////////////////////////////////
+//  File:   OspOutgoingCallState.cs                                 12 Dec 25 PHR
+/////////////////////////////////////////////////////////////////////////////////////
+
+namespace OspSimulator;
+
+
+internal enum OspOutgoingCallStateEnum
+{
+    Idle = 0,
+    Calling,
+    Trying,
+    Ringing,
+    OnLine,
+    Ended
+}
