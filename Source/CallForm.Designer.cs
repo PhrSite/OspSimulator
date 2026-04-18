@@ -301,7 +301,7 @@
             ShowInTaskbar = false;
             SizeGripStyle = SizeGripStyle.Hide;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "CallForm";
+            Text = "Current Call";
             FormClosing += CallForm_FormClosing;
             Load += CallForm_Load;
             ((System.ComponentModel.ISupportInitialize)PreviewVideoPb).EndInit();

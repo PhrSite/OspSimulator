@@ -655,6 +655,7 @@
             button1.TabIndex = 53;
             button1.Text = "Help";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // UseTelUriCheck
             // 

@@ -167,11 +167,42 @@ public partial class Form1 : Form
             return false;
         }
 
+        if (EnableIPv4Check.Checked == false && EnableIPv6Check.Checked == false)
+        {
+            MessageBox.Show("At least one IP address (IPv4 or IPv6) must be enabled and selected", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
+        }
+
         if (EnableIPv4Check.Checked == true && string.IsNullOrEmpty(IPv4Combo.Text) == true)
         {
             MessageBox.Show("IPv4 is enabled so an IPv4 address must be selected.", "Error",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             IPv4Combo.Focus();
+            return false;
+        }
+
+        if (EnableIPv6Check.Checked == true && string.IsNullOrEmpty(IPv6Combo.Text) == true)
+        {
+            MessageBox.Show("IPv6 is enabled so an IPv6 address must be selected.", "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            IPv6Combo.Focus();
+            return false;
+        }
+
+        if (m_AppSettings.NetworkSettings.UseIPv4ForHttp == true && string.IsNullOrEmpty(IPv4Combo.Text) == true)
+        {
+            MessageBox.Show("IPv4 is selected for HTTP so an IPv4 address must be selected. See Advanced Settings",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            IPv4Combo.Focus();
+            return false;
+        }
+
+        if (m_AppSettings.NetworkSettings.UseIPv4ForHttp == false && string.IsNullOrEmpty(IPv6Combo.Text) == true)
+        {
+            MessageBox.Show("IPv6 is selected for HTTP so an IPv6 address must be selected. See Advanced Settings",
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            IPv6Combo.Focus();
             return false;
         }
 
@@ -480,7 +511,7 @@ public partial class Form1 : Form
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-                
+
             try
             {
                 m_WindowsAudioIo = new WindowsAudioIo(DEFAULT_AUDIO_SAMPLES_PER_SEC, m_AppSettings.DeviceSettings.AudioDeviceName);
@@ -503,13 +534,13 @@ public partial class Form1 : Form
             m_Call.CallRejected += OnCallRejected;
 
             m_Call.StartCall();
-            CallBtn.Text = "Calling";
+            CallBtn.Text = "Calling...";
         }
         else
         {   // End the current call
             await StopCameraCapture();
             m_Call.EndCall();
-            CallBtn.Text = "Call";
+            CallBtn.Text = "Start Call";
         }
     }
 
@@ -527,19 +558,22 @@ public partial class Form1 : Form
     {
         BeginInvoke(() =>
         {
-            CallBtn.Text = "Call";
+            CallBtn.Text = "Start Call";
             CallStatusLabel.Text = string.IsNullOrEmpty(reason) == false ? reason : "Rejected reason unknown";
             TerminateCall();
         });
     }
 
+    private bool m_CallCancelled = false;
+
     private void OnCallCancellationComplete()
     {
         BeginInvoke(() =>
         {
-            CallBtn.Text = "Call";
-            CallStatusLabel.Text = "";
+            m_CallCancelled = true;
+            CallBtn.Text = "Start Call";
             TerminateCall();
+            CallStatusLabel.Text = "Cancelled";
         });
     }
 
@@ -547,7 +581,7 @@ public partial class Form1 : Form
     {
         BeginInvoke(() =>
         {
-            CallBtn.Text = status;
+            CallStatusLabel.Text = status;
         });
     }
 
@@ -556,8 +590,14 @@ public partial class Form1 : Form
         BeginInvoke(() =>
         {
             TerminateCall();
-            CallBtn.Text = "Call";
-            CallStatusLabel.Text = "";
+            CallBtn.Text = "Start Call";
+            if (m_CallCancelled == true)
+            {
+                m_CallCancelled = false;
+                CallStatusLabel.Text = "Cancelled";
+            }
+            else
+                CallStatusLabel.Text = "";
         });
     }
 
@@ -586,7 +626,7 @@ public partial class Form1 : Form
     {
         BeginInvoke(() =>
         {
-            CallBtn.Text = "Call";
+            CallBtn.Text = "Start Call";
             CallStatusLabel.Text = "Timed Out";
             TerminateCall();
         });
@@ -607,7 +647,7 @@ public partial class Form1 : Form
             callForm.ShowDialog();
             TerminateCall();
             CallStatusLabel.Text = string.Empty;
-            CallBtn.Text = "Call";
+            CallBtn.Text = "Start Call";
         });
     }
 
@@ -725,14 +765,22 @@ public partial class Form1 : Form
 
     private void CloseBtn_Click(object sender, EventArgs e)
     {
+        if (m_Call != null)
+        {
+            MessageBox.Show("Call in progress. The call must be terminated before closing the application", 
+                "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return;
+        }
 
         SaveSettings();
-
         Close();
     }
 
     private async void StartServerBtn_Click(object sender, EventArgs e)
     {
+        if (m_Call != null)
+            return;     // Don't let the user start or stop the server if a call has been started
+
         if (m_OspServer == null)
         {
             if (VerifySettings() == false)
@@ -847,5 +895,12 @@ public partial class Form1 : Form
         DialogResult result = ofd.ShowDialog();
         if (result == DialogResult.OK)
             AudioFileTb.Text = ofd.FileName;
+    }
+
+    private void button1_Click(object sender, EventArgs e)
+    {
+        string strUrl = "https://phrsite.github.io/PsapSimulator/";
+        HelpForm helpForm = new HelpForm(strUrl);
+        helpForm.ShowDialog();
     }
 }

@@ -80,10 +80,10 @@ public class NetworkSettings
     /// </summary>
     public NetworkSettings()
     {
-        MediaPorts.AudioPorts.Count = 1;
-        MediaPorts.VideoPorts.Count = 1;
-        MediaPorts.RttPorts.Count = 1;
-        MediaPorts.MsrpPorts.Count = 1;
+        MediaPorts.AudioPorts.Count = 100;
+        MediaPorts.VideoPorts.Count = 100;
+        MediaPorts.RttPorts.Count = 100;
+        MediaPorts.MsrpPorts.Count = 100;
     }
 
 }
