@@ -25,7 +25,7 @@
     <PackageReference Include="Serilog" Version="3.1.1" />
     <PackageReference Include="Serilog.Extensions.Logging" Version="8.0.0" />
     <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-    <PackageReference Include="SipLib" Version="1.0.1" />
+    <PackageReference Include="SipLib" Version="1.0.2" />
     <PackageReference Include="SipLib.Audio.Windows" Version="1.1.0" />
     <PackageReference Include="SipLib.Video.Windows" Version="1.0.1" />
 
@@ -80,6 +80,33 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="AdditionalData\6306820004\SubscriberInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\AutomatedCrashNotification.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\Comment.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\DeviceInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\PidfLo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\ProviderInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\ProviderInfo1.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\ProviderInfo2.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\ServiceInfo.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AdditionalData\6306820005\SubscriberInfo.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="avcodec-61.dll">

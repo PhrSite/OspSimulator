@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <presence xmlns="urn:ietf:params:xml:ns:pidf" xmlns:gp="urn:ietf:params:xml:ns:pidf:geopriv10"
     xmlns:gbp="urn:ietf:params:xml:ns:pidf:geopriv10:basicPolicy"
-    xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model">
+    xmlns:dm="urn:ietf:params:xml:ns:pidf:data-model" xmlns:gml="http://www.opengis.net/gml" >
     <dm:device id="target123-1">
         <gp:geopriv>
             <gp:location-info>
-                <civicAddress xmlns="urn:ietf:params:xml:ns:pidf:geopriv10:civicAddr">
-                   <country>US</country>
-                     <A1>IL</A1>
-                     <A2>KENDALL</A2>
-                     <A3>YORKVILLE</A3>
-                     <RD>CORNELL</RD>
-                     <STS>LN</STS>
-                     <HNO>1102</HNO>
-                     <PCN>YORKVILLE</PCN>
-                 </civicAddress>
+              <civicAddress xmlns="urn:ietf:params:xml:ns:pidf:geopriv10:civicAddr">
+                 <country>US</country>
+                 <A1>IL</A1>
+                 <A2>KENDALL</A2>
+                 <A3>YORKVILLE</A3>
+                 <RD>CORNELL</RD>
+                 <STS>LN</STS>
+                 <HNO>1102</HNO>
+                 <PCN>YORKVILLE</PCN>
+              </civicAddress>
+              <gml:Point>
+                <gml:pos>41.65729 -88.4603</gml:pos>
+              </gml:Point>
             </gp:location-info>
             <gp:usage-rules>
                 <gbp:retransmission-allowed>true</gbp:retransmission-allowed>

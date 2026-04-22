@@ -3,7 +3,7 @@ The main application window provides various configuration settings and controls
 
 # Call Address Settings
 
-## To SIP URI
+## <a name="ToSipUri">To SIP URI</a>
 This text field specifies the address of who to call in the form of a SIP URI.
 
 The following table show some examples of valid SIP URIs.

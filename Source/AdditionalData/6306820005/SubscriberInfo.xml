@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EmergencyCallData.SubscriberInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" privacyRequested="false" xmlns="urn:ietf:params:xml:ns:EmergencyCallData:SubscriberInfo">
+  <DataProviderReference>string0987654321@example.org</DataProviderReference>
+  <SubscriberData>
+    <vcard xmlns="urn:ietf:params:xml:ns:vcard-4.0">
+      <adr>
+        <parameters>
+          <type>
+            <text>home</text>
+          </type>
+          <label>
+            <text>Bill Jones
+311 Stonebrook St.
+Simi Valley, CA 93065</text>
+          </label>
+        </parameters>
+        <pobox />
+        <ext />
+        <street>311 Stonebrook St.</street>
+        <locality>Simi Valley</locality>
+        <region>CA</region>
+        <code>93065</code>
+        <country>USA</country>
+      </adr>
+      <anniversary>
+        <date-time>20090808T1430-0500</date-time>
+      </anniversary>
+      <bday>
+        <date>--0203</date>
+      </bday>
+      <email>
+        <parameters>
+          <type>
+            <text>home</text>
+          </type>
+        </parameters>
+        <text>BillJones@hotmail.com</text>
+      </email>
+      <email>
+        <parameters>
+          <type>
+            <text>work</text>
+          </type>
+        </parameters>
+        <text>BillJones@abc.com</text>
+      </email>
+      <fn>
+        <text>Bill Jones</text>
+      </fn>
+      <geo>
+        <parameters>
+          <type>
+            <text>work</text>
+          </type>
+        </parameters>
+        <uri>geo:46.766336,-71.28955</uri>
+      </geo>
+      <key>
+        <parameters>
+          <type>
+            <text>work</text>
+          </type>
+        </parameters>
+        <uri>http://www.viagenie.ca/Bill.Jones/Jones.asc</uri>
+      </key>
+      <lang>
+        <parameters>
+          <pref>
+            <integer>1</integer>
+          </pref>
+        </parameters>
+        <language-tag>en</language-tag>
+      </lang>
+      <lang>
+        <parameters>
+          <pref>
+            <integer>2</integer>
+          </pref>
+        </parameters>
+        <language-tag>fr</language-tag>
+      </lang>
+      <n>
+        <surname>Jones</surname>
+        <given>Bill</given>
+        <additional />
+        <prefix />
+      </n>
+      <org>
+        <parameters>
+          <type>
+            <text>work</text>
+          </type>
+        </parameters>
+        <text>Viagenie</text>
+      </org>
+      <gender>
+        <sex>M</sex>
+      </gender>
+      <tel>
+        <parameters>
+          <type>
+            <text>home</text>
+            <text>voice</text>
+          </type>
+        </parameters>
+        <uri>tel:+1 818 555 3333</uri>
+      </tel>
+      <tel>
+        <parameters>
+          <type>
+            <text>cell</text>
+          </type>
+        </parameters>
+        <uri>tel:+1 818 444 1212</uri>
+      </tel>
+      <tz>
+        <text>America/Pacific</text>
+      </tz>
+      <url>
+        <parameters>
+          <type>
+            <text>home</text>
+          </type>
+        </parameters>
+        <uri>http://nomis80.org</uri>
+      </url>
+    </vcard>
+  </SubscriberData>
+</EmergencyCallData.SubscriberInfo>
