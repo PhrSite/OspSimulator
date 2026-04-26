@@ -10,7 +10,7 @@ The following table presents a summary of the location and additional data avail
 | 6306810001 | Yes | No  | No  | No  | Yes | Yes | No  |
 | 6306820002 | Yes | No  | No  | No  | Yes | Yes | No  |
 | 6306820003 | Yes | No  | No  | No  | Yes | Yes | No  |
-| 6306820004 | Yes | No  | No  | No  | Yes | Yes | No  |
+| 6306820004 | Yes | No  | No  | Yes, in the PidfLo.xml document | Yes | Yes | No  |
 | 6306820005 | Yes | Yes | Yes | Yes, multiple  | Yes | Yes | Yes |
 
 AACN = Automated Advanced Crash Notification
@@ -26,7 +26,7 @@ The following table describes the location data in the default database for each
 | 6306820005 | None | Circle: Lat = 37.09024, Lon = -95.712891, Radius = 50 meters |
 
 # <a name="ManageCustomData">Managing Custom Data</a>
-Each Windows user’s database is located in the application data directory for the user. For example, it the user’s Windows user name is John, the additional data and location database will be:
+Each Windows user’s database is located in the application data directory for the user. For example, if the Windows user's name is John, the location and additional data will be stored in the following directory:
 
 > C:\Users\John\AppData\Local\OspSimulator\AdditionalData
 
@@ -35,7 +35,7 @@ The AdditionalData directory contains subdirectories. The name of each subdirect
 The user can modify the files under each directory and add location and additional data for new calling party numbers.
 
 Users can add additional data and location data for new calling party numbers by following these steps.
-1. Create a new directory under the AdditionalDataDirectory. The new directory name should be a new 10-digit number.
+1. Create a new directory under the AdditionalData directory. The new directory name should be a new 10-digit number.
 1. Add additional data and location data files to the new directory.
 
 **Note:** The application reads the additional data and location for all calling party numbers when the user clicks on the Start Server button in the main application window. If any changes are made to the additional data or location data after the application's server has been started then the server must be stopped and the started again.
@@ -61,7 +61,7 @@ There can only be one file for each of the following data types.
 1. Subscriber Information
 1. Automated Crash Notification
 
-The file names for each of the additional data/location data must exactly match the file names shown in the above table.
+The file names for each of the additional data/location data in the above list must exactly match the file names shown in the above table.
 
 It is possible to have multiple files for Comments and Provider Information. The asterisk shown in File Name column in the above table represents a multi-character wild card.
 

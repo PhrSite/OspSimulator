@@ -131,7 +131,7 @@
 <td>Yes</td>
 <td>No</td>
 <td>No</td>
-<td>No</td>
+<td>Yes, in the PidfLo.xml document</td>
 <td>Yes</td>
 <td>Yes</td>
 <td>No</td>
@@ -187,7 +187,7 @@
 </tbody>
 </table>
 <h1 id="managing-custom-data"><a name="ManageCustomData">Managing Custom Data</a></h1>
-<p>Each Windows user’s database is located in the application data directory for the user. For example, it the user’s Windows user name is John, the additional data and location database will be:</p>
+<p>Each Windows user’s database is located in the application data directory for the user. For example, if the Windows user's name is John, the location and additional data will be stored in the following directory:</p>
 <blockquote>
 <p>C:\Users\John\AppData\Local\OspSimulator\AdditionalData</p>
 </blockquote>
@@ -195,7 +195,7 @@
 <p>The user can modify the files under each directory and add location and additional data for new calling party numbers.</p>
 <p>Users can add additional data and location data for new calling party numbers by following these steps.</p>
 <ol>
-<li>Create a new directory under the AdditionalDataDirectory. The new directory name should be a new 10-digit number.</li>
+<li>Create a new directory under the AdditionalData directory. The new directory name should be a new 10-digit number.</li>
 <li>Add additional data and location data files to the new directory.</li>
 </ol>
 <p><strong>Note:</strong> The application reads the additional data and location for all calling party numbers when the user clicks on the Start Server button in the main application window. If any changes are made to the additional data or location data after the application's server has been started then the server must be stopped and the started again.</p>
@@ -255,7 +255,7 @@
 <li>Subscriber Information</li>
 <li>Automated Crash Notification</li>
 </ol>
-<p>The file names for each of the additional data/location data must exactly match the file names shown in the above table.</p>
+<p>The file names for each of the additional data/location data in the above list must exactly match the file names shown in the above table.</p>
 <p>It is possible to have multiple files for Comments and Provider Information. The asterisk shown in File Name column in the above table represents a multi-character wild card.</p>
 <p>For example, there could be comments relating to the caller's location and comments relating to the subscriber. In this case, the first comment file could be named &quot;Comments1.xml and the second comments file could be called &quot;Comments2.xml&quot;. The same rule applies to provider information.</p>
 

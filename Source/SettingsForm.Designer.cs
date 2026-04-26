@@ -272,9 +272,9 @@
             // CertificatePage
             // 
             CertificatePage.Controls.Add(groupBox2);
-            CertificatePage.Location = new Point(4, 40);
+            CertificatePage.Location = new Point(4, 29);
             CertificatePage.Name = "CertificatePage";
-            CertificatePage.Size = new Size(1103, 435);
+            CertificatePage.Size = new Size(1103, 446);
             CertificatePage.TabIndex = 2;
             CertificatePage.Text = "Certificate";
             CertificatePage.UseVisualStyleBackColor = true;
@@ -392,6 +392,7 @@
             HelpBtn.TabIndex = 5;
             HelpBtn.Text = "Help";
             HelpBtn.UseVisualStyleBackColor = true;
+            HelpBtn.Click += HelpBtn_Click;
             // 
             // SettingsForm
             // 

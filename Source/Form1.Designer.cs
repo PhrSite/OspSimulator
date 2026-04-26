@@ -83,7 +83,7 @@
             label1 = new Label();
             ToSipUriTb = new TextBox();
             UseUrnCheckBox = new CheckBox();
-            button1 = new Button();
+            HelpBtn = new Button();
             UseTelUriCheck = new CheckBox();
             groupBox1.SuspendLayout();
             groupBox7.SuspendLayout();
@@ -646,16 +646,16 @@
             UseUrnCheckBox.Text = "Use urn:service:sos";
             UseUrnCheckBox.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // HelpBtn
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(1450, 894);
-            button1.Name = "button1";
-            button1.Size = new Size(110, 41);
-            button1.TabIndex = 53;
-            button1.Text = "Help";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            HelpBtn.AutoSize = true;
+            HelpBtn.Location = new Point(1450, 894);
+            HelpBtn.Name = "HelpBtn";
+            HelpBtn.Size = new Size(110, 41);
+            HelpBtn.TabIndex = 53;
+            HelpBtn.Text = "Help";
+            HelpBtn.UseVisualStyleBackColor = true;
+            HelpBtn.Click += HelpBtn_Click;
             // 
             // UseTelUriCheck
             // 
@@ -674,7 +674,7 @@
             AutoSize = true;
             ClientSize = new Size(1708, 953);
             Controls.Add(UseTelUriCheck);
-            Controls.Add(button1);
+            Controls.Add(HelpBtn);
             Controls.Add(UseUrnCheckBox);
             Controls.Add(FromNumberCombo);
             Controls.Add(label2);
@@ -773,7 +773,7 @@
         private Label label1;
         private TextBox ToSipUriTb;
         private CheckBox UseUrnCheckBox;
-        private Button button1;
+        private Button HelpBtn;
         private CheckBox UseTelUriCheck;
         private CheckBox UseRecordedAudioCheck;
         private TextBox AudioFileTb;

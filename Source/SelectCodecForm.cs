@@ -85,7 +85,7 @@ public partial class SelectCodecForm : Form
 
     private void HelpBtn_Click(object sender, EventArgs e)
     {
-
+        HelpUtils.ShowHelp("SelectingCodecs.html");
     }
 
     private void CancelBtn_Click(object sender, EventArgs e)

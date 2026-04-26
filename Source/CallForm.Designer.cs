@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             EndCallBtn = new Button();
             PreviewVideoPb = new PictureBox();
             ReceiveVideoPb = new PictureBox();
@@ -51,6 +52,8 @@
             FromLbl = new Label();
             label8 = new Label();
             AudioSourceLbl = new Label();
+            HelpBtn = new Button();
+            toolTip1 = new ToolTip(components);
             ((System.ComponentModel.ISupportInitialize)PreviewVideoPb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ReceiveVideoPb).BeginInit();
             SuspendLayout();
@@ -58,11 +61,12 @@
             // EndCallBtn
             // 
             EndCallBtn.AutoSize = true;
-            EndCallBtn.Location = new Point(18, 267);
+            EndCallBtn.Location = new Point(174, 914);
             EndCallBtn.Name = "EndCallBtn";
             EndCallBtn.Size = new Size(107, 41);
             EndCallBtn.TabIndex = 0;
             EndCallBtn.Text = "End Call";
+            toolTip1.SetToolTip(EndCallBtn, "Ends the call and closes this window");
             EndCallBtn.UseVisualStyleBackColor = true;
             EndCallBtn.Click += EndCallBtn_Click;
             // 
@@ -95,7 +99,7 @@
             TextListView.HeaderStyle = ColumnHeaderStyle.Nonclickable;
             TextListView.Location = new Point(12, 544);
             TextListView.Name = "TextListView";
-            TextListView.Size = new Size(1858, 341);
+            TextListView.Size = new Size(1858, 294);
             TextListView.TabIndex = 26;
             TextListView.UseCompatibleStateImageBehavior = false;
             TextListView.View = View.Details;
@@ -118,7 +122,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(12, 906);
+            label6.Location = new Point(11, 856);
             label6.Name = "label6";
             label6.Size = new Size(157, 31);
             label6.TabIndex = 27;
@@ -126,19 +130,21 @@
             // 
             // NewMessageTb
             // 
-            NewMessageTb.Location = new Point(175, 903);
+            NewMessageTb.Location = new Point(174, 853);
             NewMessageTb.Name = "NewMessageTb";
             NewMessageTb.Size = new Size(1567, 38);
             NewMessageTb.TabIndex = 28;
+            toolTip1.SetToolTip(NewMessageTb, "Type text to send here");
             NewMessageTb.KeyPress += NewMessageTb_KeyPress;
             // 
             // SendBtn
             // 
-            SendBtn.Location = new Point(1748, 906);
+            SendBtn.Location = new Point(1747, 856);
             SendBtn.Name = "SendBtn";
             SendBtn.Size = new Size(115, 40);
             SendBtn.TabIndex = 29;
             SendBtn.Text = "Send";
+            toolTip1.SetToolTip(SendBtn, "Sends the text in the New Message edit box");
             SendBtn.UseVisualStyleBackColor = true;
             SendBtn.Click += SendBtn_Click;
             // 
@@ -160,6 +166,7 @@
             TextTypeLbl.Size = new Size(71, 33);
             TextTypeLbl.TabIndex = 31;
             TextTypeLbl.Text = "None";
+            toolTip1.SetToolTip(TextTypeLbl, "Displays the current type of text media for the call");
             // 
             // label1
             // 
@@ -179,6 +186,7 @@
             MediaTypesLbl.Size = new Size(71, 33);
             MediaTypesLbl.TabIndex = 33;
             MediaTypesLbl.Text = "None";
+            toolTip1.SetToolTip(MediaTypesLbl, "Displays the media currently available for the call");
             // 
             // AddMediaBtn
             // 
@@ -188,6 +196,7 @@
             AddMediaBtn.Size = new Size(138, 41);
             AddMediaBtn.TabIndex = 34;
             AddMediaBtn.Text = "Add Media";
+            toolTip1.SetToolTip(AddMediaBtn, "Allows you to add media to the call");
             AddMediaBtn.UseVisualStyleBackColor = true;
             AddMediaBtn.Click += AddMediaBtn_Click;
             // 
@@ -227,6 +236,7 @@
             ToLbl.Size = new Size(78, 33);
             ToLbl.TabIndex = 38;
             ToLbl.Text = "label7";
+            toolTip1.SetToolTip(ToLbl, "Displays the \"SIP To URI\" of the called party");
             // 
             // label7
             // 
@@ -246,6 +256,7 @@
             FromLbl.Size = new Size(78, 33);
             FromLbl.TabIndex = 40;
             FromLbl.Text = "label8";
+            toolTip1.SetToolTip(FromLbl, "Displays the calling party number");
             // 
             // label8
             // 
@@ -265,14 +276,28 @@
             AudioSourceLbl.Size = new Size(140, 33);
             AudioSourceLbl.TabIndex = 42;
             AudioSourceLbl.Text = "Microphone";
+            toolTip1.SetToolTip(AudioSourceLbl, "Displays the source of audio being sent to the called party");
+            // 
+            // HelpBtn
+            // 
+            HelpBtn.AutoSize = true;
+            HelpBtn.Location = new Point(16, 914);
+            HelpBtn.Name = "HelpBtn";
+            HelpBtn.Size = new Size(105, 41);
+            HelpBtn.TabIndex = 43;
+            HelpBtn.Text = "Help";
+            toolTip1.SetToolTip(HelpBtn, "Displays on-line help for this window");
+            HelpBtn.UseVisualStyleBackColor = true;
+            HelpBtn.Click += HelpBtn_Click;
             // 
             // CallForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
-            ClientSize = new Size(1882, 953);
+            ClientSize = new Size(1882, 967);
             ControlBox = false;
+            Controls.Add(HelpBtn);
             Controls.Add(AudioSourceLbl);
             Controls.Add(label8);
             Controls.Add(FromLbl);
@@ -335,5 +360,7 @@
         private Label FromLbl;
         private Label label8;
         private Label AudioSourceLbl;
+        private Button HelpBtn;
+        private ToolTip toolTip1;
     }
 }

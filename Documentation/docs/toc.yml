@@ -4,6 +4,8 @@
   href: MainWindow.md
 - name: Advanced Settings Window
   href: AdvancedSettingsWindow.md
+- name: Selecting Codecs
+  href: SelectingCodecs.md
 - name: The Current Call Window
   href: CallForm.md
 - name: Additional Data and Location Data

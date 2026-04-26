@@ -83,7 +83,7 @@
 <h1 id="call-address-settings">Call Address Settings</h1>
 <h2 id="to-sip-uri"><a name="ToSipUri">To SIP URI</a></h2>
 <p>This text field specifies the address of who to call in the form of a SIP URI.</p>
-<p>The following table show some examples of valid SIP URIs.</p>
+<p>The following table shows some examples of valid SIP URIs.</p>
 <table>
 <thead>
 <tr>
@@ -129,7 +129,7 @@
 <pre><code>From: &quot;6306820001&quot; &lt;sip:6306820001@192.168.1.76:5060;transport=tcp&gt;;tag=cx9sgz6f5u
 </code></pre>
 <h1 id="local-ip-addresses">Local IP Addresses</h1>
-<p>These settings specify which network types to use (IPv4 and/or IPv6) and allow you to specify which address to use for each network type.</p>
+<p>These settings specify which network types to use (IPv4 and/or IPv6) and allow you to specify which local address to use for each network type.</p>
 <p>Both IPv4 and IPv6 may be enabled.</p>
 <p>The local address that is used for a call depends upon these settings and the network type specified in the &quot;To SIP URI&quot; setting.</p>
 <p>The Prefer IPv6 checkbox specifies (if checked) to use IPv6 if IPv6 is enabled and the the &quot;To SIP URI&quot; resolves to both an IPv4 address and an IPv6 address.</p>
@@ -139,10 +139,11 @@
 <p>The application will only allow one type of text media (RTT or MSRP) to be selected for a call.</p>
 <p>If the &quot;Use Message/CPIM&quot; checkbox is checked then the application will always send MSRP text messages using an MSRP content type of &quot;message/CPIM&quot;. Otherwise the application will always use a MSRP content type of &quot;text/plain&quot;.</p>
 <h1 id="media-encryption-settings">Media Encryption Settings</h1>
-<p>These settings specify type to of encryption to use for RTP media (audio, video and RTT) and MSRP media.</p>
+<p>These settings specify the type to of encryption to use for RTP media (audio, video and RTT) and MSRP media.</p>
 <p>Media encryption is independent of the encryption used for SIP.</p>
 <h1 id="codec-settings">Codec Settings</h1>
 <p>The codec settings specify which media codecs are offered in the initial INVITE request or in a re-INVITE request to add a new media type to the call.</p>
+<p>The Change button for Audio Codecs displays the <a href="SelectingCodecs.html">Codec Selection</a> dialog box that allows you to select which audio codecs are offered. The Change button for Video Codecs displays the Codec Selection dialog box that allows you to select which video codecs are offered.</p>
 <h1 id="audio-settings">Audio Settings</h1>
 <p>The audio settings allow you to specify which audio device to use and the source of audio that will be sent to the called party.</p>
 <p>The audio device can either be the computer's speakers and microphone or a headset with a microphone.</p>
@@ -151,7 +152,7 @@
 <p><strong>Note:</strong> You cannot change the source of the audio once a call has been started.</p>
 <p>This application provides a default audio recording. The default audio recording will be used if the Use Default Audio Recording checkbox is checked. The default audio recording repeats a message that says:</p>
 <blockquote>
-<p>This is a non-emergency test recording.</p>
+<p>This is a non-emergency test call recording.</p>
 </blockquote>
 <p>The default recording repeats every 5 seconds.</p>
 <p>The user can use their own pre-recorded audio file by checking the Use Recorded Audio checkbox and un-checking the Use Default Audio Recording checkbox.</p>
@@ -187,7 +188,7 @@
 <h2 id="advanced-settings">Advanced Settings</h2>
 <p>This button displays the <a href="AdvancedSettingsWindow.html">Advanced Settings Window</a>.</p>
 <h2 id="start-call">Start Call</h2>
-<p>Start a new call. The button label changes to &quot;Calling...&quot;.</p>
+<p>Starts a new call. The button label changes to &quot;Calling...&quot;.</p>
 <p>You can cancel the call request by clicking on it when it indicates &quot;Calling...&quot;.</p>
 <p>The application will automatically display the <a href="CallForm.html">Current Call Window</a> when the call is answered by the called party.</p>
 <h2 id="help">Help</h2>

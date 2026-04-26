@@ -42,5 +42,3 @@ If RTT or MSRP text media is available, the list box shows the text messages tha
 
 To send a new text message, type it in the New Message text box. If the text type is MSRP you can press the Enter keyboard key or click on the Send button to send the message. For RTT, each character is sent individually as you type them. Press the Enter key to clear the New Message text box in preparation for the next message.
 
-If the text type is MSRP, a check box labeled "Use CPIM" will be visible. Check this checkbox to force the application to send MSRP text messages encapsulated within a CPIM message body. Uncheck this checkbox to send MSRP messages as plain text.
-

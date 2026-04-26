@@ -4,7 +4,7 @@ This project is a Visual Studio Windows Forms application that targets .NET 10. 
 This application is a test program that allows the user to generate Next Generation 9-1-1 (NG9-1-1) multi-media calls that simulate emergency calls as they should be provided by an NG9-1-1 Originating Service Provider (OSP).
 
 ## Installation
-You can download the self-extracting EXE file for the OspSimulator application here.
+You can download the self-extracting EXE file for installing the OspSimulator application [here](https://1drv.ms/u/c/4f6607f8bc331ae0/IQDTfRt0kjkTSIRpzl7YjQLWAQxgymiK0fSQ4xiin1yi3Ic?e=7mmXTA).
 
 **Note**: The self-extracting EXE installation file has not been digitally signed with a valid code signing certificate.
 

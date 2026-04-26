@@ -897,10 +897,8 @@ public partial class Form1 : Form
             AudioFileTb.Text = ofd.FileName;
     }
 
-    private void button1_Click(object sender, EventArgs e)
+    private void HelpBtn_Click(object sender, EventArgs e)
     {
-        string strUrl = "https://phrsite.github.io/PsapSimulator/";
-        HelpForm helpForm = new HelpForm(strUrl);
-        helpForm.ShowDialog();
+        HelpUtils.ShowHelp("MainWindow.html");
     }
 }

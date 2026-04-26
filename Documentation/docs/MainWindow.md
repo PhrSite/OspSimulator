@@ -6,7 +6,7 @@ The main application window provides various configuration settings and controls
 ## <a name="ToSipUri">To SIP URI</a>
 This text field specifies the address of who to call in the form of a SIP URI.
 
-The following table show some examples of valid SIP URIs.
+The following table shows some examples of valid SIP URIs.
 
 | SIP URI | Description |
 |---------|-------------|
@@ -51,7 +51,7 @@ From: "6306820001" <sip:6306820001@192.168.1.76:5060;transport=tcp>;tag=cx9sgz6f
 ```
 
 # Local IP Addresses
-These settings specify which network types to use (IPv4 and/or IPv6) and allow you to specify which address to use for each network type.
+These settings specify which network types to use (IPv4 and/or IPv6) and allow you to specify which local address to use for each network type.
 
 Both IPv4 and IPv6 may be enabled.
 
@@ -69,12 +69,14 @@ The application will only allow one type of text media (RTT or MSRP) to be selec
 If the "Use Message/CPIM" checkbox is checked then the application will always send MSRP text messages using an MSRP content type of "message/CPIM". Otherwise the application will always use a MSRP content type of "text/plain".
 
 # Media Encryption Settings
-These settings specify type to of encryption to use for RTP media (audio, video and RTT) and MSRP media.
+These settings specify the type to of encryption to use for RTP media (audio, video and RTT) and MSRP media.
 
 Media encryption is independent of the encryption used for SIP.
 
 # Codec Settings
 The codec settings specify which media codecs are offered in the initial INVITE request or in a re-INVITE request to add a new media type to the call.
+
+The Change button for Audio Codecs displays the [Codec Selection](SelectingCodecs.md) dialog box that allows you to select which audio codecs are offered. The Change button for Video Codecs displays the Codec Selection dialog box that allows you to select which video codecs are offered.
 
 # Audio Settings
 The audio settings allow you to specify which audio device to use and the source of audio that will be sent to the called party.
@@ -88,7 +90,7 @@ If the Use Recorded Audio checkbox is checked, then audio from a pre-recorded au
 **Note:** You cannot change the source of the audio once a call has been started.
 
 This application provides a default audio recording. The default audio recording will be used if the Use Default Audio Recording checkbox is checked. The default audio recording repeats a message that says:
-> This is a non-emergency test recording.
+> This is a non-emergency test call recording.
 
 The default recording repeats every 5 seconds.
 
@@ -136,7 +138,7 @@ When the server starts, the label of this button changes to "Stop Server". If yo
 This button displays the [Advanced Settings Window](AdvancedSettingsWindow.md).
 
 ## Start Call
-Start a new call. The button label changes to "Calling...".
+Starts a new call. The button label changes to "Calling...".
 
 You can cancel the call request by clicking on it when it indicates "Calling...".
 

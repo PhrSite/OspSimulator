@@ -82,7 +82,7 @@ public partial class CallForm : Form
 
     private void OnReInviteFailed(string errorMessage)
     {
-        BeginInvoke(() => 
+        BeginInvoke(() =>
         {
             MessageBox.Show($"Re-INVITE request failed. Reason = {errorMessage}", "Warning",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -247,7 +247,7 @@ public partial class CallForm : Form
 
         item.SubItems.Add(textMessage.Message);
         item.SubItems.Add(textMessage.Time.ToString("HH:mm:ss"));
-                
+
         return item;
     }
 
@@ -267,7 +267,7 @@ public partial class CallForm : Form
         BeginInvoke(() =>
         {
             ReceiveVideoPb.Image?.Dispose();
-            ReceiveVideoPb.Image = bitmap; 
+            ReceiveVideoPb.Image = bitmap;
         });
     }
 
@@ -352,7 +352,7 @@ public partial class CallForm : Form
         // Figure out which media can be added to the call.
         List<string> availableMedia = new List<string>()
         {
-            MediaTypes.Audio, MediaTypes.Video, MediaTypes.RTT, MediaTypes.MSRP            
+            MediaTypes.Audio, MediaTypes.Video, MediaTypes.RTT, MediaTypes.MSRP
         };
 
         foreach (string callMediaType in m_Call.CallMediaTypes)
@@ -413,5 +413,10 @@ public partial class CallForm : Form
         }
 
         return strMedia;
+    }
+
+    private void HelpBtn_Click(object sender, EventArgs e)
+    {
+        HelpUtils.ShowHelp("CallForm.html");
     }
 }

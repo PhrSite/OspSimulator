@@ -5,7 +5,7 @@ Follow these steps to start a NG9-1-1 call from the application's [main window](
 
 1. Enter a SIP URI into the ["To SIP URI"](MainWindow.md#ToSipUri) edit box. This field determines where to send the INVITE request.
 1. Select a calling party number from the "From" combo box. The number selected in the From combo box determines what location and additional data is delivered with the call. See [Location and Additional Data](AdditionalDataAndLocation.md).
-1. Select other configuration parameters such as how location and additional data will be delivered from the main form of the application.
+1. Select other configuration parameters such as how location and additional data will be delivered in the main window of the application.
 1. Click on the Start Server button.
 1. Click on the Start Call button. The label of this button will change to "Calling...".
 

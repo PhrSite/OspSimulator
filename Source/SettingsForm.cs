@@ -347,4 +347,9 @@ public partial class SettingsForm : Form
         if (result == DialogResult.OK)
             CertFileTb.Text = ofd.FileName;
     }
+
+    private void HelpBtn_Click(object sender, EventArgs e)
+    {
+        HelpUtils.ShowHelp("AdvancedSettingsWindow.html");
+    }
 }
