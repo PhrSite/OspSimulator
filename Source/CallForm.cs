@@ -295,6 +295,12 @@ public partial class CallForm : Form
         m_Call.ReInviteFailed -= OnReInviteFailed;
     }
 
+    // 15 May 26 PHR
+    private const int NumFrames = 50;
+    private DateTime m_LastFrameTime = DateTime.MinValue;
+    private double m_TotalFrameMs = 0;
+    private int m_FrameCount = 0;
+
     private void OnFrameBitmapReadyForPreview(Bitmap bitmap)
     {
         BeginInvoke(() =>
@@ -308,6 +314,30 @@ public partial class CallForm : Form
             {
             }
         });
+
+        // 12 May 26 PHR -- For debug only
+        if (m_LastFrameTime == DateTime.MinValue)
+            m_LastFrameTime = DateTime.Now;
+        else
+        {
+            m_FrameCount += 1;
+            DateTime Now = DateTime.Now;
+            m_TotalFrameMs = m_TotalFrameMs + (Now - m_LastFrameTime).TotalMilliseconds;
+            m_LastFrameTime = Now;
+            if (m_FrameCount >= NumFrames)
+            {
+                double CurrentFrameRate = 1000 / (m_TotalFrameMs / m_FrameCount);
+                BeginInvoke(() =>
+                {
+                    FrameFpsLbl.Text = $"{CurrentFrameRate.ToString("F1")} FPS";
+                });
+
+                m_TotalFrameMs = 0;
+                m_FrameCount = 0;
+            }
+        }
+
+
     }
 
     private void SendBtn_Click(object sender, EventArgs e)

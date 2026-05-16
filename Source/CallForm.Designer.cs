@@ -54,6 +54,7 @@
             AudioSourceLbl = new Label();
             HelpBtn = new Button();
             toolTip1 = new ToolTip(components);
+            FrameFpsLbl = new Label();
             ((System.ComponentModel.ISupportInitialize)PreviewVideoPb).BeginInit();
             ((System.ComponentModel.ISupportInitialize)ReceiveVideoPb).BeginInit();
             SuspendLayout();
@@ -290,6 +291,16 @@
             HelpBtn.UseVisualStyleBackColor = true;
             HelpBtn.Click += HelpBtn_Click;
             // 
+            // FrameFpsLbl
+            // 
+            FrameFpsLbl.BorderStyle = BorderStyle.Fixed3D;
+            FrameFpsLbl.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FrameFpsLbl.Location = new Point(906, 294);
+            FrameFpsLbl.Name = "FrameFpsLbl";
+            FrameFpsLbl.Size = new Size(318, 32);
+            FrameFpsLbl.TabIndex = 44;
+            FrameFpsLbl.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // CallForm
             // 
             AutoScaleDimensions = new SizeF(13F, 31F);
@@ -297,6 +308,7 @@
             AutoSize = true;
             ClientSize = new Size(1882, 967);
             ControlBox = false;
+            Controls.Add(FrameFpsLbl);
             Controls.Add(HelpBtn);
             Controls.Add(AudioSourceLbl);
             Controls.Add(label8);
@@ -362,5 +374,6 @@
         private Label AudioSourceLbl;
         private Button HelpBtn;
         private ToolTip toolTip1;
+        private Label FrameFpsLbl;
     }
 }

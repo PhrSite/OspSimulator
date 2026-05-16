@@ -242,6 +242,14 @@ public class OspOutgoingCall
         SIPRequest invite = SIPRequest.CreateRequest(SIPMethodsEnum.INVITE, m_CallParameters.RequestSipUri,
             m_CallParameters.ToSipUri, m_CallParameters.ToSipUri.User, m_FromSipUri, m_CallParameters.From,
             m_SipTransport.SipChannel.SIPChannelContactURI);
+
+        // Add the Call-Info headers for the NG9-1-1 emergency-CallId and emergency-IncidentId
+        string ElementId = $"osp.{Program.AppName}";
+        string EmergencyCallIdentifier = SipUtils.BuildEmergencyIdUrn("callid", ElementId);
+        string EmergencyIncidentIdentifier = SipUtils.BuildEmergencyIdUrn("incidentid", ElementId);
+        SipUtils.AddEmergencyIdUrnCallInfoHeader(invite, EmergencyCallIdentifier, "emergency-CallId");
+        SipUtils.AddEmergencyIdUrnCallInfoHeader(invite, EmergencyIncidentIdentifier, "emergency-IncidentId");
+
         SipBodyBuilder bodyBuilder = new SipBodyBuilder();
         bodyBuilder.AddContent(SipLib.Body.ContentTypes.Sdp, m_OfferSdp.ToString(), null, null);
 
@@ -772,7 +780,8 @@ public class OspOutgoingCall
 
         m_VideoReceiver = new VideoReceiver(answeredMediaDescription, rtpChannel);
         m_VideoReceiver.FrameReady += OnFrameBitmapReady;
-        m_VideoSender = new VideoSender(answeredMediaDescription, rtpChannel);
+        m_VideoSender = new VideoSender(answeredMediaDescription, rtpChannel, m_AppSettings!.DeviceSettings!.VideoDevice!.
+            DeviceFormat.Framerate);
 
         // If video is available, the m_CameraCapture object will not be null
         if (m_CameraCapture != null)
@@ -1290,7 +1299,8 @@ public class OspOutgoingCall
 
         m_VideoReceiver = new VideoReceiver(AnsweredMd, rtpChannel);
         m_VideoReceiver.FrameReady += OnFrameBitmapReady;
-        m_VideoSender = new VideoSender(AnsweredMd, rtpChannel);
+        m_VideoSender = new VideoSender(AnsweredMd, rtpChannel, m_AppSettings!.DeviceSettings!.VideoDevice!.
+            DeviceFormat.Framerate);
        
         // If video is available, the m_CameraCapture object will not be null
         if (m_CameraCapture != null)
