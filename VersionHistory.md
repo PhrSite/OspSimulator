@@ -1,5 +1,10 @@
 # Version History
 
+## v1.2.0 - 26 May 2026
+| Issue No. | Change Type | Description |
+|--------|--------|-------|
+| NA     | Change | Updated to use SipLib v1.1.0 and SipRecClient v1.2.2 that fix various issues with the DTLS-SRTP handshake. |
+
 ## v1.1.0 - 15 May 2026
 | Issue No. | Change Type | Description |
 |--------|--------|-------|
